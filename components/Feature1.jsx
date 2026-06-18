@@ -1,21 +1,48 @@
+"use client";
+
 import Button from './ui/Button';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const Feature1 = () => {
-    return (
-        <section>
-            <div className="content flex justify-between items-center px-25 pt-20">
-                <div className="right w-[500px]">
-                    <Button variant='feature'> Global Reach</Button>
-                    <h2 className='font-medium text-[40px] pt-5'>The First Fully Global Job Board, Anywhere, Ever</h2>
-                    <p className='font-normal leading-[35px] pt-5'>RemoteRecruit connects candidates with opportunities around the world. With today’s remote-first workforce, you need to be able to find the best jobs and the best people for them, wherever they may be.</p>
-                </div>
-                <div className="left">
-                    <Image src="/feature.png" width={451} height={454} className='' />
-                </div>
-            </div>
-        </section>
-    );
+  return (
+    <section className="overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="content flex flex-col-reverse md:flex-row justify-between items-center px-5 sm:px-10 md:px-16 lg:px-25 pt-14 sm:pt-20 gap-10 md:gap-8"
+      >
+
+        {/* Text */}
+        <div className="right w-full md:w-[500px] text-center md:text-left">
+          <div className="flex justify-center md:justify-start">
+            <Button variant="feature">Global Reach</Button>
+          </div>
+          <h2 className="font-medium text-[28px] sm:text-[34px] md:text-[40px] pt-4 sm:pt-5 leading-tight">
+            The First Fully Global Job Board, Anywhere, Ever
+          </h2>
+          <p className="font-normal leading-[32px] sm:leading-[35px] pt-4 sm:pt-5 text-sm sm:text-base text-[#767784]">
+            RemoteRecruit connects candidates with opportunities around the world. With
+            today&apos;s remote-first workforce, you need to be able to find the best jobs and
+            the best people for them, wherever they may be.
+          </p>
+        </div>
+
+        {/* Image */}
+        <div className="left flex-shrink-0 transition-transform duration-500 hover:scale-[1.02]">
+          <Image
+            src="/feature.png"
+            width={451}
+            height={454}
+            alt="Global reach illustration"
+            className="w-[260px] sm:w-[340px] md:w-[380px] lg:w-[451px] h-auto"
+          />
+        </div>
+      </motion.div>
+    </section>
+  );
 };
 
 export default Feature1;

@@ -5,17 +5,21 @@ import Showcase from '../components/Showcase';
 import Trial from '../components/Trial';
 import Questions from '../components/Questions';
 import Footer from '../components/Footer';
+import ScrollToTop from '../components/ui/ScrollToTop';
 
 export default function Home() {
   return (
-    <div className="max-w-[1600px] mx-auto">
-      <Hero />
-      <Feature1 />
-      <Feature2 />
-      <Showcase />
-      <Trial />
-      <Questions />
-      <Footer />
-    </div>
+    <>
+      <div className="max-w-[1600px] mx-auto">
+        <Hero />
+        <Feature1 />
+        <Feature2 />
+        <Showcase />
+        <Trial />
+        <Questions />
+        <Footer />
+      </div>
+      <ScrollToTop />
+    </>
   );
 }
